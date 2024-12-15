@@ -1,0 +1,513 @@
+:root {
+  --primary: #223ba1;
+  --bg: #158420;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: rgba(255, 255, 255, 1);
+  color: #fff;
+  /* min-height: 2000px; */
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.4rem 7%;
+  background: linear-gradient(0deg, white, chocolate);
+  border-bottom: 1px solid #a1a9da;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+}
+
+.navbar .navbar-logo {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #000000;
+  font-style: italic;
+}
+
+.navbar .navbar-logo span {
+  color: #806a60;
+}
+
+.navbar .navbar-nav a {
+  color: #000000;
+  display: inline-block;
+  font-size: 1rem;
+  margin: 0 1rem;
+}
+
+.navbar .navbar-nav a:hover {
+  color: chocolate;
+}
+
+.navbar .navbar-nav a::after {
+  content: "";
+  display: block;
+  padding-bottom: 0.5rem;
+  border-bottom: 0.1rem solid var(--bg);
+  transform: scaleX(0);
+  transition: 0.2s linear;
+}
+
+.navbar .navbar-nav a:hover::after {
+  transform: scaleX(0.5);
+}
+
+.navbar .navbar-extra a {
+  color: #000000;
+  margin: 0 0.5rem;
+}
+
+.navbar .navbar-extra a:hover {
+  color: var(--bg);
+}
+
+#hamburger-menu {
+  display: none;
+}
+
+/* Hero Section */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background-image: url("../img/kopi-sidikalang.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.hero::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0; /* Menambahkan posisi top */
+  left: 0; /* Menambahkan posisi left */
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 1) 3%,
+    rgba(255, 255, 255, 0) 25%
+  );
+  pointer-events: none; /* Opsional, memungkinkan klik melalui overlay */
+}
+
+.hero .content {
+  padding: 1.4rem 7%;
+  max-width: 60rem;
+}
+
+.hero .content h1 {
+  font-size: 4rem;
+  color: #fff;
+  text-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5);
+  line-height: 1.2;
+}
+
+.hero .content h1 span {
+  color: #806a60;
+}
+
+.hero .content p {
+  font-size: 1.6rem;
+  margin-top: 1rem;
+  line-height: 1.2;
+  font-weight: 30;
+  text-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5);
+}
+
+.hero .content .cta {
+  margin-top: 1rem;
+  display: inline-block;
+  padding: 1rem 3rem;
+  font-size: 1.4rem;
+  color: #fff;
+  background-color: chocolate;
+  border-radius: 0.5rem;
+  box-shadow: 1px 1px 3px;
+}
+
+/* About section */
+.about-container {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
+.about-item {
+  text-align: center;
+  display: flex; /* Atur dalam satu baris atau kolom */
+  flex-direction: column; /* Elemen dalam satu kolom */
+  align-items: center;
+  gap: 10px; /* Jarak antara paragraf */
+}
+
+.about-img {
+  display: flex; /* Mengatur gambar dalam satu baris secara horizontal */
+  gap: 20px; /* Memberikan jarak antar gambar */
+  justify-content: center; /* Menyusun gambar di tengah */
+  margin-top: 4rem;
+}
+
+.about {
+  padding: 8rem 7% 1.4rem;
+  text-align: center;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0)), 
+              url(../img/Kegiatan-pertanian-kopi-di-AMSTIRDAM-2.jpeg); 
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.about h2 {
+  text-align: center;
+  font-size: 2.6rem;
+  margin-bottom: 20px;
+}
+
+.about h2 span {
+  color: chocolate;
+}
+
+.about-img img {
+  width: 200px; /* Menentukan lebar gambar yang sama */
+  height: auto; /* Menjaga rasio aspek gambar */
+  object-fit: cover; /* Agar gambar tidak terdistorsi */
+  border-radius: 8px; /* Memberikan sudut membulat pada gambar */
+}
+
+.about-item p {
+  margin: 0; /* Hapus margin default */
+  text-align: left; /* Atur paragraf menjadi rata kiri */
+  color: #fff;
+  font-weight: 500;
+  flex: 1; /* Pastikan paragraf memenuhi ruang yang tersisa */
+}
+
+.map {
+  width: 100%; /* Menentukan lebar peta sesuai ukuran kontainer */
+  height: 400px; /* Tentukan tinggi peta, sesuaikan jika perlu */
+  display: block; /* Mengatur tampilan agar elemen ini berupa blok */
+  margin-left: 0; /* Menghilangkan margin kiri */
+  margin-right: 0; /* Menghilangkan margin kanan */
+}
+
+.alamat {
+  align-self: flex-start; /* Menyusun alamat di sebelah kiri */
+  margin-top: 20px; /* Memberikan jarak dengan elemen sebelumnya */
+}
+
+.alamat h1 {
+  text-align: left;
+}
+
+
+
+
+/* Produk section */
+#produk {
+  background-color: #4caf50;
+  background-repeat: no-repeat;
+  background: linear-gradient(to top, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0)), 
+              url(../img/92b29f2fe4ad2584399e399d023cb048.png_720x720q80.png); 
+  background-size: cover;
+}
+
+.produk {
+  padding: 4rem 7%;
+  text-align: center;
+}
+
+.produk-container {
+  display: flex;
+  flex-direction: column; /* Menyusun elemen produk secara vertikal */
+  gap: 20px; /* Memberikan jarak antar produk */
+  align-items: center; /* Menyusun elemen produk di tengah */
+}
+
+.produk-item {
+  display: flex;
+  flex-direction: column; /* Menyusun gambar dan informasi secara vertikal */
+  align-items: center;
+  background-color: #f8f8f8; /* Warna latar belakang produk */
+  padding: 20px;
+  border-radius: 8px; /* Sudut membulat pada tiap produk */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Memberikan efek bayangan */
+  width: 300px; /* Menentukan lebar produk */
+}
+
+.produk-img {
+  width: 100%;
+  height: auto;
+  object-fit: cover; /* Menjaga proporsi gambar */
+  border-radius: 8px; /* Sudut membulat pada gambar */
+}
+
+.produk-info {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.produk-info h3 {
+  font-size: 1.6rem;
+  margin-bottom: 10px;
+}
+
+.produk-info h1 {
+  color: chocolate;
+}
+
+.harga, .berat {
+  font-size: 1.2rem;
+  color: #555;
+}
+
+
+/* Pemesanan section */
+#belanja {
+    min-height: 100vh;
+    background-color: var(--bg);
+    background: linear-gradient(to top, chocolate, #fff);
+}
+
+.pemesanan h2 {
+  text-align: center;
+  font-size: 2.6rem;
+  margin-bottom: 3rem;
+  color: chocolate;
+}
+
+.pemesanan {
+  padding: 8rem 7% 1.4rem;
+  min-height: 90vh;
+  text-align: center;
+  background-color: #f8f9fa;
+}
+
+#order-form {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background: #4f2306;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: white;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: #80bdff;
+  outline: none;
+}
+
+button[type="submit"] {
+  display: inline-block;
+  width: 100%;
+  padding: 10px 20px;
+  background-color: #89590d;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #806a60;
+}
+
+/* Kontak kami section */
+/* Layout untuk baris (row) */
+.row {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px; /* Jarak antar elemen */
+  flex-wrap: wrap;
+}
+
+/* Container peta */
+.map-container {
+  flex: 1 1 50%; /* Menetapkan peta mengambil 50% lebar */
+  max-width: 50%; /* Lebar maksimal 50% */
+}
+
+.mapp {
+  width: 100%;
+  height: 100%; /* Menetapkan tinggi 100% agar sesuai dengan lebar */
+  border: 0;
+  border-radius: 10px;
+}
+
+/* Kontainer untuk ikon sosial media */
+.contact-info {
+  flex: 1 1 45%; /* Ikon sosial media mengambil 45% lebar */
+  max-width: 45%; /* Lebar maksimal 45% */
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column; /* Menyusun ikon secara vertikal */
+  align-items: center;
+  gap: 20px;
+}
+
+/* Gaya untuk ikon sosial media */
+/* Kontainer untuk ikon sosial media */
+.social-icons {
+  display: flex;
+  flex-direction: row; /* Mengatur ikon secara horizontal */
+  gap: 20px; /* Jarak antar ikon */
+  justify-content: center; /* Menyusun ikon di tengah secara horizontal */
+}
+
+.social-icons a {
+  font-size: 30px;
+  color: #333;
+  text-decoration: none;
+}
+
+.social-icons a:hover {
+  color: #764a0c; /* Mengubah warna saat hover */
+}
+
+
+/* Gaya untuk tombol kirim pesan (opsional) */
+.btn {
+  margin-top: 20px;
+  background-color: #25d366; /* Warna WhatsApp */
+  padding: 10px 20px;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  text-align: center;
+  font-size: 16px;
+}
+
+.btn a {
+  color: white;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background-color: #128c7e;
+}
+
+
+
+
+
+
+
+
+
+/* Media queries */
+@media (max-width: 1366px) {
+  html {
+    font-size: 75%;
+  }
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 62.5%;
+  }
+  #hamburger-menu {
+    display: inline-block;
+  }
+  .navbar .navbar-nav {
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    background-color: #000000;
+    width: 30rem;
+    height: 100vh;
+    transition: 0.3s;
+  }
+  .navbar .navbar-nav.active {
+    right: 0;
+  }
+  .navbar .navbar-nav a {
+    color: #ffffff;
+    display: block;
+    margin: 1.5rem;
+    padding: 0.5rem;
+    font-size: 2rem;
+  }
+  .navbar .navbar-nav a::after {
+    transform-origin: 0 0;
+  }
+
+  .navbar .navbar-nav a:hover:after {
+    transform: scaleX(0.2);
+  }
+
+  .produk .row {
+    flex-wrap: wrap;
+  }
+
+  .produk .row .produk-img img {
+    height: 24rem;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .produk .row .content-produk {
+    padding: 0;
+  }
+
+  .produk .row .content-produk h3 {
+    margin-top: 1rem;
+    font-size: 2rem;
+  }
+
+  .produk .row .content-produk p {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 450px) {
+  html {
+    font-size: 55%;
+  }
+}
